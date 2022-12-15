@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+[name="oneCheck"]:checked,
+[name="oneCheck"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+[name="oneCheck"]:checked+label,
+[name="oneCheck"]:not(:checked)+label {
+  position: relative;
+  padding-left: 22px;
+  cursor: pointer;
+  line-height: 15px;
+  display: inline-block;
+  color: rgb(10, 10, 10);
+}
+
+[name="oneCheck"]:checked+label:before,
+[name="oneCheck"]:not(:checked)+label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 15px;
+  height: 15px;
+ 
+  border-radius: 3px;
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 3px;
+  background: #fff;
+}
+[name="oneCheck"]:checked+label:before {
+    background: #3f8c07;
+}
+
+[name="oneCheck"]:checked+label:after,
+[name="oneCheck"]:not(:checked)+label:after {
+  content: '\2713';
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+    //background: #3f8c07;
+  position: absolute;
+  top: 0px;
+  left: 2px;
+  font-weight: 700;
+  color: white;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[name="oneCheck"]:not(:checked)+label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+[name="oneCheck"]:checked+label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
